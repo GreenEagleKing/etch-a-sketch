@@ -1,6 +1,8 @@
 // Create 16x16 grid
 
 let gridContainer = document.querySelector("#gridCanvas");
+const button = document.querySelector("#resetBtn");
+button.addEventListener("click", resetColor);
 
 function createGrid(numBox) {
     for (let i = 0; i < numBox; i++)    {
@@ -27,4 +29,13 @@ function boxListeners() {
 
 function changeColor(e)  {
     e.target.classList.add("colorChange");
+}
+
+// reset button to remove colour change to grids
+
+function resetColor() {
+    let gridBox = document.querySelectorAll(".box");
+    gridBox.forEach(element => {
+    element.classList.remove("colorChange");
+})
 }

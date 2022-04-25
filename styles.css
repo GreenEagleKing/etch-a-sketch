@@ -17,3 +17,7 @@
 div.colorChange {
     background-color: black;
 }
+
+div.colorReset {
+    background-color: red;
+}
