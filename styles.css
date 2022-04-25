@@ -1,0 +1,19 @@
+#gridCanvas {
+    height: auto;
+    width: 400px;
+    background-color: yellow;
+    display: grid;
+}
+
+.box {
+    border: 1px solid black;
+    box-sizing: border-box;
+    display: inline-block;
+    width: 25px;
+    height: 25px;
+    margin-bottom: -4px;
+}
+
+div.colorChange {
+    background-color: black;
+}
