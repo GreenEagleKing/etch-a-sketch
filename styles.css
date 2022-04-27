@@ -1,12 +1,13 @@
 #gridCanvas {
     height: auto;
-    width: 400px;
-    background-color: yellow;
+    width: auto;
+    background-color: blue;
     display: grid;
 }
 
 .box {
     border: 1px solid black;
+    background-color: yellow;
     box-sizing: border-box;
     display: inline-block;
     width: 25px;
