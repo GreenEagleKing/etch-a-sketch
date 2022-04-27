@@ -1,8 +1,15 @@
+.body   {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 #gridCanvas {
     display: grid;
     background-color: blue;
     height: 550px;
     width: 550px;
+    margin: auto;
 }
 
 .box {
@@ -19,3 +26,30 @@ div.colorReset {
     background-color: red;
 }
 
+#title {
+    text-align: center;
+    padding: 20px;
+}
+
+.inputs {
+    display: flex;
+    padding: 20px;
+    width: 550px;
+    margin: auto;
+    gap: 10px;
+}
+
+#resetBtn {
+    display: flex;
+    justify-self: left;
+}
+
+#userBtn {
+    justify-self:end;
+}
+
+#userGridInput {
+    margin-left: auto;
+    width: 130px;
+
+}
