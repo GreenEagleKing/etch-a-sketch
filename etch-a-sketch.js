@@ -2,6 +2,7 @@ let gridContainer = document.querySelector("#gridCanvas");
 const button = document.querySelector("#resetBtn");
 button.addEventListener("click", resetColor);
 
+
 const userBtn = document.querySelector("#userBtn");
 userBtn.addEventListener("click", () => {
     resetColor();
@@ -13,15 +14,13 @@ userBtn.addEventListener("click", () => {
 // Create 16x16 grid
 
 function createGrid(numBox) {
-    console.log(numBox)
+    gridContainer.style.gridTemplate = `repeat(${numBox}, 1fr) / repeat(${numBox}, 1fr)`;
     for (let i = 0; i < numBox; i++)    {
-        let div = document.createElement("div");
         for (let j = 0; j < numBox; j++)    {
             let square = document.createElement("div");
-            square.setAttribute("class", "box");
-            div.append(square)
+            square.className= "box";
+            gridContainer.appendChild(square);
         }
-        gridContainer.append(div);
     }
 }
 
@@ -52,7 +51,9 @@ function resetColor() {
 // resets grid when new customGrid is created
 
 function resetGrid()    {
-    let gridBox = document.querySelectorAll(".box").forEach(el => el.remove());
+    while (gridContainer.firstChild) {
+        gridContainer.removeChild(gridContainer.firstChild);
+    }
 }
 
 // create new grid from user input between 1 and 100

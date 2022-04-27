@@ -1,18 +1,14 @@
 #gridCanvas {
-    height: auto;
-    width: auto;
-    background-color: blue;
     display: grid;
+    background-color: blue;
+    height: 550px;
+    width: 550px;
 }
 
 .box {
-    border: 1px solid black;
+    border: 1px solid rgb(0, 0, 0);
     background-color: yellow;
     box-sizing: border-box;
-    display: inline-block;
-    width: 25px;
-    height: 25px;
-    margin-bottom: -4px;
 }
 
 div.colorChange {
@@ -22,3 +18,4 @@ div.colorChange {
 div.colorReset {
     background-color: red;
 }
+
