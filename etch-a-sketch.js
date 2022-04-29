@@ -1,9 +1,12 @@
 let gridContainer = document.querySelector("#gridCanvas");
-const button = document.querySelector("#resetBtn");
-button.addEventListener("click", resetColor);
+const resetButton = document.querySelector("#resetBtn");
+resetButton.addEventListener("click", resetColor);
+const colorBtn = document.querySelector("#colorBtn");
+const blackBtn = document.querySelector("#blackBtn");
+let colorTheme = [];
+let colorPick = [];
 
-
-const userBtn = document.querySelector("#userBtn");
+const userBtn = document.querySelector("#inputBtn");
 userBtn.addEventListener("click", () => {
     resetColor();
     resetGrid();
@@ -24,9 +27,9 @@ function createGrid(numBox) {
     }
 }
 
-document.onload = createGrid(16), boxListeners();
+document.onload = createGrid(16), colorTheme = "black", boxListeners();
 
-// When mouse hovers over a box the colour is filled to black
+// When mouse hovers over a box the colour is intially filled to black.
 
 function boxListeners() {
     let gridBox= document.querySelectorAll(".box");
@@ -35,16 +38,36 @@ function boxListeners() {
     });
 }
 
-function changeColor(e)  {
-    e.target.classList.add("colorChange");
-}
+// If the user clicks the color button the box colour changes to the selection
 
-// reset button to remove colour change to grids
+colorBtn.addEventListener("click", function () {
+    colorTheme = "color";
+});
+
+blackBtn.addEventListener("click", function () {
+    colorTheme = "black";
+});
+
+function changeColor(e) {
+    switch (colorTheme) {
+        case "color":
+            let randomN = Math.floor(Math.random() * 360);
+            colorPick = `hsl(${randomN}, 100%, 50%)`;
+            e.target.style.backgroundColor = colorPick;
+            break;
+       case "black":
+            colorPick = "black";
+            e.target.style.backgroundColor = colorPick;
+            break;
+    }
+}
+    
+// reset button to reset colour change to grids
 
 function resetColor() {
     let gridBox = document.querySelectorAll(".box");
     gridBox.forEach(element => {
-    element.classList.remove("colorChange");
+    element.style.backgroundColor = "yellow";
 })
 }
 
